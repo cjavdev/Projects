@@ -71,9 +71,6 @@ end
 class RBBinarySearchTree
   attr_accessor :root
 
-  def initialize
-  end
-
   def push node
     puts "pushing node: #{ node.value }"
     if @root.nil?
@@ -95,15 +92,12 @@ class RBBinarySearchTree
       finder.color = :red
     end
     finder ||= node
-    debugger
     push_case_1 finder
-    p_in_order
   end
 
   # case 1: node is root
   def push_case_1 node
     if node.parent.nil?
-      puts "falls in case 1"
       node.color = :black
     else
       push_case_2 node
@@ -112,21 +106,17 @@ class RBBinarySearchTree
   
   # case 2: black parent
   def push_case_2 node
-    if node.parent.color == :black
-      puts "falls in case 2"
-      return
-    else
-      push_case_3 node
-    end
+    return if node.parent.color == :black
+    push_case_3 node
   end
  
   # case 3: red parent AND red uncle
   def push_case_3 node
     if node.parent.color == :red && !!node.uncle && node.uncle.color == :red
-      puts "falls in case 3"
-      node.parent.color = :black
-      node.uncle.color = :black
+      node.parent.color      = :black
+      node.uncle.color       = :black
       node.grandparent.color = :red
+      #continue swapping colors up the tree
       push_case_1 node.grandparent
       return
     end
@@ -139,18 +129,16 @@ class RBBinarySearchTree
     if node.parent.color == :red && !!node.uncle && node.uncle.color == :black
       # is right child?
       if node == node.parent.right && node.grandparent.left == node.parent
-        puts "falls in case 4: rotating node left"
         rotate_left(node, node.parent)
         push_case_5 node.left
       elsif node == node.parent.left && node.grandparent.right == node.parent
-        puts "falls in case 4: rotating node right"
         rotate_right(node, node.parent)
         push_case_5 node.right
       else
-        push_case_5 node
+        push_case_5 node # can i fix these?
       end
     else
-      push_case_5 node
+      push_case_5 node # ?
     end
   end
 
@@ -161,16 +149,18 @@ class RBBinarySearchTree
     node.grandparent.color = :red if node.grandparent
 
     if node == node.parent.left && node.grandparent.left == node.parent
-      puts "falls in case 5: rotating parent right"
       rotate_right(node.parent, node.grandparent)
     elsif node == node.parent.right && node.grandparent.right == node.parent
-      puts "falls in case 5: rotating parent left"
       rotate_left(node.parent, node.grandparent)
     end
-    puts "hit bottom of case 5"
   end
 
-  def rotate_left node, parent # 8
+  #   X          Y
+  #  / \   =>   / \
+  # a   Y      X   c
+  #    / \    / \
+  #   b   c  a   b
+  def rotate_left node, parent
     parent.right = node.left
     node.left = parent
     node.parent = node.grandparent
@@ -181,7 +171,6 @@ class RBBinarySearchTree
       grandparent.left = node if grandparent.left == parent
       grandparent.right = node if grandparent.right == parent
     end
-    
     @root = node if @root == parent
   end
 
@@ -196,7 +185,6 @@ class RBBinarySearchTree
       grandparent.left = node if grandparent.left == parent
       grandparent.right = node if grandparent.right == parent
     end
-    
     @root = node if @root == parent
   end
 
