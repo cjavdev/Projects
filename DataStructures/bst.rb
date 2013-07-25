@@ -173,7 +173,12 @@ class RBBinarySearchTree
     end
     @root = node if @root == parent
   end
-
+  
+  #     X        Y
+  #    / \ =>   / \
+  #   Y   c    a   X
+  #  / \          / \
+  # a   b        b   c
   def rotate_right node, parent
     parent.left = node.right
     node.right = parent
