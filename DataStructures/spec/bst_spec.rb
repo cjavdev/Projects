@@ -101,22 +101,32 @@ describe RBBinarySearchTree do
     end
 
     it "pushes red child to red parent with red uncle on outside of uncle" do
+      #subject.push(n3)
+      #subject.push(n1)
+      #subject.push(n7)
+      #subject.push(n8)
+      #subject.push(n9)
+      #subject.push(n10)
+
+      #subject.root.should == n3
+      #subject.root.right.color.should == :red
+      #subject.root.right.value.should == 8
+      #subject.root.left.color.should == :black
+      #subject.root.left.value.should == 1
+      #subject.root.right.left.should == n7
+      #subject.root.right.right.should == n9
+      #subject.root.right.right.right.should == n10
+      #subject.root.right.right.right.color.should == :red
+    end
+
+    it "pushes a red child at the bottom of a tree and rotates about root" do
       subject.push(n3)
       subject.push(n1)
       subject.push(n7)
       subject.push(n8)
       subject.push(n9)
       subject.push(n10)
-
-      subject.root.should == n3
-      subject.root.right.color.should == :red
-      subject.root.right.value.should == 8
-      subject.root.left.color.should == :black
-      subject.root.left.value.should == 1
-      subject.root.right.left.should == n7
-      subject.root.right.right.should == n9
-      subject.root.right.right.right.should == n10
-      subject.root.right.right.right.color.should == :red
+      subject.push(n11)
     end
   end
 end
