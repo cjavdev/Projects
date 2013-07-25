@@ -1,25 +1,17 @@
 require 'colored'
+require 'singleton'
 require 'debugger'
 
-class Node
+class TreeNode
   attr_accessor :left, :right, :parent, :value
+  include Comparable
 
   def initialize value
     @value = value
   end
 
-  def >(other)
-    return false if @value.nil? || other.nil? || other.value.nil?
-    @value > other.value
-  end
-
-  def ==(other)
-    @value == other.value
-  end
-
-  def <(other)
-    return false if @value.nil? || other.nil? || other.value.nil?
-    @value < other.value
+  def <=>(other)
+    @value <=> other.value
   end
 
   def grandparent
@@ -33,20 +25,14 @@ class Node
     nil
   end
 
-  def p_in_order
-    left.p_in_order unless left.nil?
-    print "#{ self }"
-    right.p_in_order unless right.nil?
-  end
-
-  def pre_order
-    print "#{ self } "
-    left.pre_order unless left.nil?
-    right.pre_order unless right.nil?
+  def each &blk
+    left.each &blk unless left.nil?
+    blk.call(self)
+    right.each &blk unless right.nil?
   end
 end
 
-class RedBlackNode < Node
+class RBNode < TreeNode
   attr_accessor :color
 
   def initialize value, parent = nil, color = :red
@@ -54,8 +40,8 @@ class RedBlackNode < Node
     @parent = parent
     @color = color
     if value
-      @left = RedBlackNode.new(nil, self, :black) # sentinal
-      @right = RedBlackNode.new(nil, self, :black) # sentinal
+      @left = RBNode.new nil, self, :black
+      @right = RBNode.new nil, self, :black
     end
   end
 
@@ -68,28 +54,26 @@ class RedBlackNode < Node
   end
 end
 
-class RBBinarySearchTree
+class RBTree
   attr_accessor :root
 
-  def push node
-    puts "pushing node: #{ node.value }"
+  def << val
+    insert RBNode.new(val)
+  end
+
+  def insert node
     if @root.nil?
       @root = node
     else
       @root = @root.parent until @root.parent.nil?
       finder = @root
       until finder.value.nil?
-        if node > finder
-          finder = finder.right
-        else
-          finder = finder.left
-        end
+        finder = node > finder ? finder.right : finder.left
       end
 
-      finder.value = node.value
-      finder.left = RedBlackNode.new(nil, finder, :black)
-      finder.right = RedBlackNode.new(nil, finder, :black)
-      finder.color = :red
+      finder.value, finder.color = node.value, :red
+      finder.left = RBNode.new(nil, finder, :black) 
+      finder.right = RBNode.new(nil, finder, :black)
     end
     finder ||= node
     push_case_1 finder
@@ -103,26 +87,27 @@ class RBBinarySearchTree
       push_case_2 node
     end
   end
-  
+
   # case 2: black parent
   def push_case_2 node
     return if node.parent.color == :black
     push_case_3 node
   end
- 
+
   # case 3: red parent AND red uncle
   def push_case_3 node
     if node.parent.color == :red && !!node.uncle && node.uncle.color == :red
       node.parent.color      = :black
       node.uncle.color       = :black
       node.grandparent.color = :red
+
       #continue swapping colors up the tree
       push_case_1 node.grandparent
       return
     end
     push_case_4 node
   end
- 
+
   # case 4: red parent AND black uncle
   # and the node is on the same side of the parent as the uncle
   def push_case_4 node
@@ -165,15 +150,14 @@ class RBBinarySearchTree
     node.left = parent
     node.parent = node.grandparent
     parent.parent = node
-    grandparent = node.parent
 
-    if grandparent
-      grandparent.left = node if grandparent.left == parent
-      grandparent.right = node if grandparent.right == parent
+    if node.parent
+      node.parent.left = node if node.parent.left == parent
+      node.parent.right = node if node.parent.right == parent
     end
     @root = node if @root == parent
   end
-  
+
   #     X        Y
   #    / \ =>   / \
   #   Y   c    a   X
@@ -184,11 +168,10 @@ class RBBinarySearchTree
     node.right = parent
     node.parent = node.grandparent
     parent.parent = node
-    grandparent = node.parent
 
-    if grandparent
-      grandparent.left = node if grandparent.left == parent
-      grandparent.right = node if grandparent.right == parent
+    if node.parent
+      node.parent.left = node if node.parent.left == parent
+      node.parent.right = node if node.parent.right == parent
     end
     @root = node if @root == parent
   end
