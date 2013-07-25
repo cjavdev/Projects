@@ -95,6 +95,7 @@ class RBBinarySearchTree
       finder.color = :red
     end
     finder ||= node
+    debugger
     push_case_1 finder
     p_in_order
   end
@@ -174,17 +175,14 @@ class RBBinarySearchTree
     node.left = parent
     node.parent = node.grandparent
     parent.parent = node
-    grandparent = node.grandparent
+    grandparent = node.parent
 
     if grandparent
-      if grandparent.left == parent
-        grandparent.left = node
-      else
-        grandparent.right = node
-      end
-    else
-      @root = node
+      grandparent.left = node if grandparent.left == parent
+      grandparent.right = node if grandparent.right == parent
     end
+    
+    @root = node if @root == parent
   end
 
   def rotate_right node, parent
@@ -192,17 +190,14 @@ class RBBinarySearchTree
     node.right = parent
     node.parent = node.grandparent
     parent.parent = node
-    grandparent = node.grandparent
+    grandparent = node.parent
 
     if grandparent
-      if grandparent.left == parent
-        grandparent.left = node
-      else
-        grandparent.right = node
-      end
-    else
-      @root = node
+      grandparent.left = node if grandparent.left == parent
+      grandparent.right = node if grandparent.right == parent
     end
+    
+    @root = node if @root == parent
   end
 
   def p_in_order
