@@ -56,6 +56,7 @@ end
 
 class RBTree
   attr_accessor :root
+  include Enumerable
 
   def << val
     insert RBNode.new(val)
@@ -96,7 +97,7 @@ class RBTree
 
   # case 3: red parent AND red uncle
   def push_case_3 node
-    if node.parent.color == :red && !!node.uncle && node.uncle.color == :red
+    if node.parent.color == :red && node.uncle.color == :red
       node.parent.color      = :black
       node.uncle.color       = :black
       node.grandparent.color = :red
@@ -111,7 +112,7 @@ class RBTree
   # case 4: red parent AND black uncle
   # and the node is on the same side of the parent as the uncle
   def push_case_4 node
-    if node.parent.color == :red && !!node.uncle && node.uncle.color == :black
+    if node.parent.color == :red && node.uncle.color == :black
       # is right child?
       if node == node.parent.right && node.grandparent.left == node.parent
         rotate_left(node, node.parent)
@@ -176,8 +177,26 @@ class RBTree
     @root = node if @root == parent
   end
 
+  def each &blk
+    @root.each(&blk)
+  end
+
   def p_in_order
     @root.p_in_order
   end
 end
+
+
+tree = RBTree.new
+tree << 1
+tree << 2
+tree << 3
+tree << 4
+
+tree.each do |node|
+  puts node
+end
+
+
+
 
