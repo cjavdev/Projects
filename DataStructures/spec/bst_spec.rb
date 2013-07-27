@@ -168,5 +168,19 @@ describe RBTree do
       subject.root.should == n9
       subject.root.right.right.should == n12
     end
+
+    it "returns the correct height" do
+      subject.insert(n1)
+      subject.insert(n3)
+      subject.insert(n8)
+      subject.height.should == 2
+    end
+
+    it "returns the correct width" do
+      subject.insert(n1)
+      subject.insert(n3)
+      subject.insert(n8)
+      subject.width.should == 2
+    end
   end
 end

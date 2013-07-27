@@ -184,6 +184,50 @@ class RBTree
   def p_in_order
     @root.p_in_order
   end
+
+  def height
+    @height ||= check_height
+  end
+
+  def check_height
+    height = 0
+    finder = @root
+    until finder.value.nil?
+      finder = finder.left || finder.right
+      height += 1
+    end
+    height
+  end
+
+  def width
+    (2 ** height) / 2
+  end
+
+  def levels prev_levels = [[@root]]
+    prev_levels << []
+    another_row = false
+    prev_levels[-2].each do |last_level|
+      new_row = []
+      last_level.each do |prev_node|
+        if prev_node && prev_node.value && prev_node.left
+          new_row << prev_node.left
+          another_row = true
+        else
+          new_row << nil
+        end
+
+        if prev_node &&  prev_node.value && prev_node.right
+          new_row << prev_node.right
+          another_row = true
+        else
+          new_row << nil
+        end
+      end
+      prev_levels[-1] << new_row
+    end
+    levels prev_levels if another_row
+    prev_levels
+  end
 end
 
 
@@ -193,9 +237,7 @@ tree << 2
 tree << 3
 tree << 4
 
-tree.each do |node|
-  puts node
-end
+p tree.levels
 
 
 
