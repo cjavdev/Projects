@@ -34,4 +34,13 @@ describe MyHash do
     p subject.buckets
     subject.buckets.length.should == 2*old_bucket_length
   end
+
+  it "prints shit" do
+    subject["apple"] = "new"
+    subject["another test"] = "blah"
+
+    subject.each do |key, value|
+      puts "#{ key }: #{ value }"
+    end
+  end
 end

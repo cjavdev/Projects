@@ -1,22 +1,27 @@
 require 'digest/sha1'
-require 'debugger'
 
 class MyHash
-  attr_accessor :buckets, :item_count
+  attr_reader :buckets
+  include Enumerable
 
   def initialize
     @buckets =  [nil] * 10
-    @item_count = 1
+    @count = 1
+  end
+
+  def [] key
+    index = (hash key) % @buckets.length
+    @buckets[ index ].each { |kv| return kv[1] if kv[0] == key }
+    nil
   end
 
   def []= key, value
-    @item_count += 1
-    double_buckets if @buckets.length < @item_count
-    hashed_key = Digest::SHA1.hexdigest(key).hex
-    destination_idx = hashed_key % @buckets.length
-    @buckets[ destination_idx ] = [] if @buckets[ destination_idx ].nil?
+    @count += 1
+    double_buckets if @buckets.length < @count
+    index = (hash key) % @buckets.length
+    @buckets[ index ] = [] if @buckets[ index ].nil?
     remove key if self[key]
-    @buckets[ destination_idx ] << [ key, value ]
+    @buckets[ index ] << [ key, value ]
   end
 
   def double_buckets
@@ -24,8 +29,7 @@ class MyHash
     @buckets.each do |bucket|
       unless bucket.nil?
         bucket.each do |kv|
-          hashed_key = Digest::SHA1.hexdigest(kv[0]).hex
-          index = hashed_key % temp.length
+          index = (hash kv[0]) % temp.length
           temp[index] = [] if temp[index].nil?
           temp[index] << kv
         end
@@ -34,17 +38,34 @@ class MyHash
     @buckets = temp
   end
 
-  def [] key
-    hashed_key = Digest::SHA1.hexdigest(key).hex
-    index = hashed_key % @buckets.length
-    @buckets[ index ].each { |kv| return kv[1] if kv[0] == key }
-    nil
+  def each &blk
+    @buckets.each do |bucket|
+      unless bucket.nil?
+        bucket.each { |kv| blk.call(kv[0], kv[1]) }
+      end
+    end
+  end
+
+  def each_key &blk
+    @buckets.each do |bucket|
+      bucket.each { |kv| blk.call(kv[0]) } unless bucket.nil?
+    end
+  end
+
+  def each_value &blk
+    @buckets.each do |bucket|
+      bucket.each { |kv| blk.call(kv[1]) } unless bucket.nil?
+    end
   end
 
   def remove key
-   hashed_key = Digest::SHA1.hexdigest(key).hex
-   index = hashed_key % @buckets.length
-   @item_count -= 1
+   index = (hash key) % @buckets.length
+   @count -= 1
    @buckets[ index ].reject! { |kv| kv[0] == key }
+  end
+
+  private
+  def hash key
+    Digest::SHA1.hexdigest(key).hex
   end
 end
