@@ -1,4 +1,4 @@
-require_relative '../hash.rb'
+require 'hash.rb'
 
 describe MyHash do
   subject { MyHash.new }

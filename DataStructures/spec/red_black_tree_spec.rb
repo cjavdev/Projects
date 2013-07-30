@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../red_black_tree.rb'
+require 'red_black_tree.rb'
 
 describe RBTree do
   subject { RBTree.new }
