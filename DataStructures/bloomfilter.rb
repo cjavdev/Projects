@@ -11,18 +11,12 @@ class Bloomfilter
   def add(string)
     new = Bitwise.new
     new.raw = Digest::SHA2.hexdigest(string)
-    @vector |= new
+    @vector = @vector | new
   end
 
   def includes? string
-    
+    new = Bitwise.new
+    new.raw = Digest::SHA2.hexdigest(string)
+    new.bits == (new & @vector).bits
   end
 end
-
-b = Bloomfilter.new
-p b.add("test")
-p b.add("smash")
-
-p b.includes?("test")
-p b.includes?("another")
-
