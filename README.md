@@ -27,7 +27,7 @@
 * [Linked
   List](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/linked_list.rb).
 [wiki](http://en.wikipedia.org/wiki/Linked_list)
-
+ * [Graph](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/graph.rb). [wiki](http://en.wikipedia.org/wiki/Graph_\(data_structure\))
 ##Algorithms
  * [Bubble
    Sort](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/bubble_sort.rb). [wiki](http://en.wikipedia.org/wiki/Bubble_sort)
