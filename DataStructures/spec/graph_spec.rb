@@ -45,4 +45,13 @@ describe Graph do
     subject.edge_value(n1, n2).should == 4
     subject.edge_value(n1, n3).should == nil
   end
+
+  it "#find finds an item" do
+    subject.add_node(n1)
+    subject.add_node(n2)
+    subject.add_node(n3)
+    subject.add_edge(n1, n2)
+    subject.add_edge(n2, n3)
+    n1.has_path_to?(n3).should == true
+  end
 end

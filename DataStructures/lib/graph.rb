@@ -2,6 +2,7 @@ require 'debugger'
 
 class Node
   attr_accessor :neighbors, :value
+  include Comparable
 
   def initialize(value)
     @value = value
@@ -18,6 +19,18 @@ class Node
 
   def adjacent_val?(neighbor)
     @neighbors.keys.include?(neighbor)
+  end
+
+  def <=>(other)
+    @value <=> other.value
+  end
+
+  def has_path_to?(node)
+    fringe = @neighbors.map { |k, v| v[0] }
+    found = false
+    until fringe.empty? || found
+      
+    end
   end
 end
 
