@@ -52,6 +52,6 @@ describe Graph do
     subject.add_node(n3)
     subject.add_edge(n1, n2)
     subject.add_edge(n2, n3)
-    n1.has_path_to?(n3).should == true
+    n1.has_path_to(n3).should == true
   end
 end
