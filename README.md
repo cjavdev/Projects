@@ -5,28 +5,28 @@
 
 ##Data Structures
 * [Binary
-  Tree](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/binary_tree.rb). [wiki]
+  Tree](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/binary_tree.rb). [wiki](http://en.wikipedia.org/wiki/Binary_tree)
 * [Binary Search
   Tree](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/binary_search_tree.rb).
-[wiki]
+[wiki](http://en.wikipedia.org/wiki/Binary_search_tree)
 * [Red Black
   Tree](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/red_black_tree.rb).
-[wiki]
+[wiki](http://en.wikipedia.org/wiki/Red_black_tree)
 * [Bloomfilter](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/bloomfilter.rb).
-  [wiki]
+  [wiki](http://en.wikipedia.org/wiki/Bloom_filter)
 * [Hash](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/hash.rb).
-  [wiki]
+  [wiki](http://en.wikipedia.org/wiki/Hash_table)
 * [Heap](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/heap.rb).
-  [wiki]
+  [wiki](http://en.wikipedia.org/wiki/Heap_\(data_structure\))
 * [Trie](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/public/javascripts/Trie.js).
-  [wiki]
+  [wiki](http://en.wikipedia.org/wiki/Trie)
 * [Deque](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/deque.rb).
-  [wiki]
+  [wiki](http://en.wikipedia.org/wiki/Double-ended_queue)
 * [Set](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/set.rb).
-  [wiki]
+  [wiki](http://en.wikipedia.org/wiki/Set_\(abstract_data_type\))
 * [Linked
   List](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/linked_list.rb).
-[wiki]
+[wiki](http://en.wikipedia.org/wiki/Linked_list)
 
 
 ##Numbers
