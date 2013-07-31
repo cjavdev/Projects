@@ -28,6 +28,19 @@
   List](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/linked_list.rb).
 [wiki](http://en.wikipedia.org/wiki/Linked_list)
 
+##Algorithms
+ * [Bubble
+   Sort](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/bubble_sort.rb). [wiki](http://en.wikipedia.org/wiki/Bubble_sort)
+ * [Heap
+   Sort](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/heap_sort.rb). [wiki](http://en.wikipedia.org/wiki/Heap_sort)
+ * [Insertion
+   Sort](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/insertion_sort.rb). [wiki](http://en.wikipedia.org/wiki/Insertion_sort)
+ * [Merge
+   Sort](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/merge_sort.rb). [wiki](http://en.wikipedia.org/wiki/Merge_sort)
+ * [Quick
+   Sort](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/quick_sort.rb). [wiki](http://en.wikipedia.org/wiki/Quick_sort)
+ * [Selection
+   Sort](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/selection_sort.rb). [wiki](http://en.wikipedia.org/wiki/Selection_sort)
 
 ##Numbers
 ---------
