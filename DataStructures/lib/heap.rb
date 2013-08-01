@@ -1,50 +1,28 @@
-class HeapNode
+class Node
   attr_accessor :value, :left, :right, :parent
 
   def initialize value
     @value = value
   end
   
-  def >(other)
-    @value > other.value
-  end
-  
-  def ==(other)
-    @value == other.value
+  def <=>(other)
+    other.value <=> @value  
   end
 end
 
 class Heap
   attr_accessor :max, :count
-  
-  # takes an array of values
-  def initialize vals
+  def initialize
     @nodes = []
-    vals.each { |val| self.push HeapNode.new(val) }
-    @count = vals.length
-    heapify
+    @root = nil
   end
-
-  def pop
-    heapify
-  end
-
-  def push node
-    b = @max
-    until b.right.nil? || b.left.nil?
-      b = b.right || b.left
-    end
+  
+  def insert node
     
-    unless b.left
-      b.left = node
-      node.parent = b
-    else
-      b.right = node
-      node.parent = b
-    end
+  end
 
-    @count += 1
-    heapify
+  def remove
+    
   end
  
   def swap(big, small)
