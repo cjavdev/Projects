@@ -104,6 +104,23 @@ the `ping` command sends an ICMP (aka echo aka ping) request to a destination ip
 `username:~/$  ping 98.124.199.1`
 `username:~/$  ping google.com` Lets talk about this one when we get to `nslookup`
 
+This is what a ping to github looks like when github is sucking. 
+```
+$ ping github.com
+PING github.com (207.97.227.239): 56 data bytes
+Request timeout for icmp_seq 0
+64 bytes from 207.97.227.239: icmp_seq=1 ttl=47 time=134.107 ms
+Request timeout for icmp_seq 2
+Request timeout for icmp_seq 3
+Request timeout for icmp_seq 4
+Request timeout for icmp_seq 5
+Request timeout for icmp_seq 6
+Request timeout for icmp_seq 7
+^C
+--- github.com ping statistics ---
+12 packets transmitted, 1 packets received, 91.7% packet loss
+round-trip min/avg/max/stddev = 134.107/134.107/134.107/0.000 ms
+```
 
 ### `traceroute`
 
