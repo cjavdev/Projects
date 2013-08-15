@@ -173,5 +173,46 @@ Resources:
 * [Traceroute - wiki](http://en.wikipedia.org/wiki/Traceroute)
 
 ### `nmap`
+`nmap` is a security scanner and is used to discover hosts and services on a network. This tool has an abundance of options... way too many... way way too many... when you think about scanning anything you should first think `nmap` then search the docs for how to do what you want. 
+
+`nmap` can do:
+* Host discovery
+* Port scanning
+* Version detection - Interrogating network services on remote devices to determine application name and version number. (This will use fingerprinting and try to determine stuff based on response times, formats of response packets and other metrics)
+* OS detection - Usually open ports and versions of services
+* Scriptable interaction with the target
+* Information on targets - Reverse DNS names, device types, and MAC addresses.
+
+Typical uses of `nmap`:
+* Auditing the security of a device by identifying the network connections which can be made to it.[citation needed]
+* Identifying open ports on a target host in preparation for auditing.[8]
+* Network inventory, network mapping, maintenance and asset management.
+* Auditing the security of a network by identifying new servers.[9]
+
+`nmap -sS localhost` will perform a syn scan of your own computer. This will show open tcp ports. 
+
+```
+$ sudo nmap -sS localhost
+Password:
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2013-08-15 11:39 PDT
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00013s latency).
+Not shown: 996 closed ports
+PORT     STATE SERVICE
+80/tcp   open  http
+631/tcp  open  ipp
+3000/tcp open  ppp
+5432/tcp open  postgresql
+
+Nmap done: 1 IP address (1 host up) scanned in 8.16 seconds
+```
+
+There are tons and tons of scans, and you can find the basics [here](http://nmap.org/bennieston-tutorial/)
+
+Resources:
+* [nmap.org](http://nmap.org/)
+* [basic scans](http://nmap.org/bennieston-tutorial/)
 
 ### Wireshark
+
