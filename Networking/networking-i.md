@@ -14,6 +14,7 @@ The internet as we know it is often conceptualized using the 7 layer [OSI (Open 
 | 5. Session      | (Data)          | Interhost communication, sessions between apps |
 | 6. Presentation | (Data)          | Machine dependent to machine independent, encryption decryption |
 | 7. Application  | (Data)          | Network process to application        |
+| 8. Human/Chair	  |  ????           | Break stuff, complain |
 
 
 ## Tools
