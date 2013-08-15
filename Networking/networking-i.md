@@ -84,7 +84,7 @@ the broadcast ip is 10.0.1.255. this will always be the highest ip address in th
 
 
 ### `arp`
-`arp`  
+`arp` (aka Adress Resolution Protocol) is used to map MAC address to IP address.
 
 ### `ping`
 That Guy: The website looks like its down!
