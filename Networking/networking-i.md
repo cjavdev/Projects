@@ -1,7 +1,9 @@
 # Networking I
 
+![Internet](http://electls.blogs.wm.edu/files/2012/04/series-of-tubes.jpg)
+
 ## OSI Model
-The internet as we know it is often conceptualized using the 7 layer OSI (Open Systems Interconnection) Model. It's a way to separate functions and technologies used for networking at each layer into groups.
+The internet as we know it is often conceptualized using the 7 layer [OSI (Open Systems Interconnection) Model](http://en.wikipedia.org/wiki/OSI_model). It's a way to separate functions and technologies used for networking at each layer into groups.
 
 | Layer           | Data Unit       | Function                              |
 |:----------------|:----------------|:--------------------------------------|
@@ -15,7 +17,7 @@ The internet as we know it is often conceptualized using the 7 layer OSI (Open S
 
 
 ## Tools
-The internet network as we know it is a complicated beast. Since its inception many tools have been created for diagnosing problems and testing routing, connectivity and general network function.
+The internets network as we know it is a complicated beast. Since its inception many tools have been created for diagnosing problems and testing routing, connectivity and general network function.
 
 Before we get started lets download:
 * [nmap](http://nmap.org/download.html#macosx)
