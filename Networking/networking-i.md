@@ -103,4 +103,8 @@ the `ping` command sends an ICMP (aka echo aka ping) request to a destination ip
 `username:~/$  ping google.com` Lets talk about this one when we get to `nslookup`
 
 
-###
+### `traceroute`
+
+### `nmap`
+
+### Wireshark
