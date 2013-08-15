@@ -214,5 +214,13 @@ Resources:
 * [nmap.org](http://nmap.org/)
 * [basic scans](http://nmap.org/bennieston-tutorial/)
 
-### Wireshark
+### `telnet` and `ssh`
+`telnet` and `ssh` are tools for remotely interacting with servers.
+the huge difference between the two utilities is that telnet sends everything in clear text. SSH encrypts everything. *ALWAYS* try ssh first.
 
+`telnet 10.0.1.133`
+
+`ssh username@10.0.1.133`
+
+### Wireshark
+Tool for sniffing traffic and inspecting packets.
