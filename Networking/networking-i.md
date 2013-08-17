@@ -3,7 +3,7 @@
 ![Internet](http://electls.blogs.wm.edu/files/2012/04/series-of-tubes.jpg)
 
 ## OSI Model
-The internet as we know it is often conceptualized using the 7 layer [OSI (Open Systems Interconnection) Model](http://en.wikipedia.org/wiki/OSI_model). It's a way to separate functions and technologies used for networking at each layer into groups.
+The internet as we know it is often conceptualized using the 7 layer [OSI (Open Systems Interconnection) Model](http://en.wikipedia.org/wiki/OSI_model). It's a way to separate functions and technologies used for networking into layers.
 
 | Layer           | Data Unit       | Function                              |
 |:----------------|:----------------|:--------------------------------------|
@@ -14,7 +14,7 @@ The internet as we know it is often conceptualized using the 7 layer [OSI (Open 
 | 5. Session      | (Data)          | Interhost communication, sessions between apps |
 | 6. Presentation | (Data)          | Machine dependent to machine independent, encryption decryption |
 | 7. Application  | (Data)          | Network process to application        |
-| 8. Human/Chair	  |  ????           | Break stuff, complain |
+| 8. Human/Chair  |  ????           | Break stuff, complain |
 
 
 ## Tools
