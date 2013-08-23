@@ -1,7 +1,4 @@
 #w1zeman1p's Project List 
-###based roughly on Martyr2’s Mega Project List
-
-==============================
 
 ## Networking
 * [Networking-I](https://github.com/w1zeman1p/Projects/blob/master/Networking/networking-i.md)
