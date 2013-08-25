@@ -239,9 +239,7 @@ Calculator**](https://github.com/w1zeman1p/Projects/blob/master/Numbers/rpn.rb) 
 
 **Add Transactions In File and Find Averages** – Read in a file of financial transactions, group them into accounts, add up fields or find averages or apply credits and debits to each account.
 
-**Create Zip File Maker** – The user enters various files from different directories and maybe even another computer on the network and the program transfers them and zips them up into a zip file. For added complexity, apply actual compression to the files.
-
-**PDF Generator** – An application which can read in a text file, html file or some other file and generates a PDF file out of it. Great for a web based service where the user uploads the file and the program returns a PDF of the file.
+**Create Zip File Maker** – The user enters various files from different directories and maybe even another computer on the network and the program transfers them and zips them up into a zip file. For added complexity, apply actual compression 
 
 **Bulk Renamer and Organizer** – This program will take a series of files and renames them with a specific filename filter entered by the user. For instance if the user enters myimage###.jpg it will rename all files with a “minimum” of three numbers like “myimage001.jpg”, “myimage145.jpg” or even “myimage1987.jpg” since 1987 has at least three numbers.
 
