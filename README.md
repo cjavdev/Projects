@@ -77,7 +77,7 @@ Calculator**](https://github.com/w1zeman1p/Projects/blob/master/Numbers/rpn.rb) 
 
 **Tax Calculator** – Asks the user to enter a cost and either a country or state tax. It then returns the tax plus the total cost with tax.
 
-**Dijkstra’s Algorithm** – Create a program that finds the shortest path through a graph using its edges.
+[**Dijkstra’s Algorithm**](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/dijkstra.rb) – Create a program that finds the shortest path through a graph using its edges.
 
 ##Text
 
