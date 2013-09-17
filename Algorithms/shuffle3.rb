@@ -26,7 +26,7 @@ students = [:oddalot,
             :tnd23 ]
 
 students.combination(2).each do |pair|
-  g.add_edge(pair.first, pair.last)
+  g.add_edge(pair.first, pair.last, 6)
 end
 p g
 
