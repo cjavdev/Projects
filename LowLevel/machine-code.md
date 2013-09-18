@@ -111,13 +111,13 @@ loop_tag:
       goto loop_tag;
 ```
 
-A Historical Perspective 156
-3.2 Program Encodings 159
-3.3 Data Formats 167
-3.4 Accessing Information 168
-3.5 Arithmetic and Logical Operations 177
-3.6 Control 185
-3.7 Procedures 219
+## Procedures/Methods/Functions
+
+`call` Label Procedure call
+`call` *Operand Procedure call
+`leave` Prepare stack for return
+`ret` Return from call
+
 3.8 Array Allocation and Access 232
 3.9 Heterogeneous Data Structures 241
 3.10 Putting It Together: Understanding Pointers 252
@@ -126,6 +126,7 @@ A Historical Perspective 156
 3.13 x86-64: Extending IA32 to 64 Bits 267
 3.14 Machine-Level Representations of Floating-Point Programs 292
 3.15 Summary 293
-Bibliographic Notes 294
-Homework Problems 294
-Solutions to Practice Problems 308
+
+
+
+
