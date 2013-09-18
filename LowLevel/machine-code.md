@@ -37,7 +37,7 @@ How to see the object code?
 `gcc file.c -c` This will compile and assemble.
 
 ## Instruction Sets
-![8086 InstructionSet](./80806Ins.png)
+![8086 InstructionSet](./8086Ins.png)
 
 
 
