@@ -37,9 +37,79 @@ How to see the object code?
 `gcc file.c -c` This will compile and assemble.
 
 ## Instruction Sets
+
+Each microprocessor will have a single instruction set. Here is one of the most simple (8086):
+
 ![8086 InstructionSet](./8086Ins.png)
 
+### Condition Codes
+In addtion to the registers, the CPU stores a bunch of flags. Some of those include:
+CF: Carry Flag. The most recent operation generated a carry out of the most
+signiﬁcant bit. Used to detect overﬂow for unsigned operations.
+ZF: Zero Flag. The most recent operation yielded zero.
+SF: Sign Flag. The most recent operation yielded a negative value.
+OF: OverFlow Flag. The most recent operation caused a twos complement overflow operation.
 
+## Math
+Common Arithmetic and Logical Operations:
+`inc` D + 1 Increment
+`dec` D - 1 Decrement
+`neg` -D Negate
+`not` ~D Complement
+`add` D + S Add
+`sub` D - S Subtract
+`imul` D * S Multiply
+`xor` D ^ S Exclusive-or
+`or` D | S Or
+`and` D & S And
+
+## Control
+Common Control Operations:
+`cmpb` Compare byte
+`cmpw` Compare word
+`cmpl` Compare double word
+`testb` Test byte
+`testw` Test word
+`testl` Test double word
+
+## Set Things
+`sete` D←ZF Equal / zero
+`setne` D←~ZF Not equal / not zero
+
+## Jumps
+`jmp` Label 1 Direct jump
+`jmp` *Operand 1 Indirect jump
+`je` Label jz ZF Equal / zero
+`jne` Label jnz ~ZF Not equal / not zero
+
+## Moves
+`movb` Move byte
+`movw` Move word
+`movl` Move double word
+`pushl` Push double word
+`popl` Pop double word
+`cmove` ZF Equal / zero
+`cmovne` ~ZF Not equal / not zero
+
+## Loops
+Most compilers write loops using the do-while form even tho it is one of the less common of the control structures when writing code.
+
+In c you might write a do-while loop like this:
+
+```c
+int i = 0;
+do
+  printf("hello, world\n");
+while(i++ < 3);
+```
+
+compilers will use the tags and go-to statements like this:
+```
+loop_tag:
+   //body
+   if(condition)
+      goto loop_tag;
+```
 
 A Historical Perspective 156
 3.2 Program Encodings 159
