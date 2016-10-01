@@ -1,5 +1,3 @@
-require 'debugger'
-
 class WorkDay
   attr_accessor :pairs
 
@@ -53,7 +51,6 @@ class PodSession
   def gen_session
     mid = (@students.length / 2)
     @ranges = [(0...mid)]
-    debugger
     until @ranges.first.to_a.count <= 1
       (Math.log2(@students.count).to_i + 1).times do
         @students.rotate_ranges! @ranges

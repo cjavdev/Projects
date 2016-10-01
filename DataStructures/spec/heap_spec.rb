@@ -9,18 +9,18 @@ describe Heap do
   let(:n4) { HeapNode.new(4) }
   let(:n5) { HeapNode.new(5) }
   let(:n6) { HeapNode.new(6) }
-  
+
   describe "#insert" do
     it "can insert a single item" do
       subject.insert n1
       subject.root.should == n1
     end
-  
+
     it "can insert multiple items correctly" do
       subject.insert n1
       subject.insert n2
       subject.root.value.should == 2
-      
+
       subject.insert n6
       subject.insert n4
       subject.insert n5
@@ -28,7 +28,7 @@ describe Heap do
       subject.root.value.should == 6
     end
   end
-  
+
   describe "#remove" do
     it "can properly remove the biggest item" do
       subject.insert n1
@@ -55,18 +55,18 @@ describe MaxHeap do
   let(:n4) { HeapNode.new(4) }
   let(:n5) { HeapNode.new(5) }
   let(:n6) { HeapNode.new(6) }
-  
+
   describe "#insert" do
     it "can insert a single item" do
       subject.insert n1
       subject.root.should == n1
     end
-  
+
     it "can insert multiple items correctly" do
       subject.insert n1
       subject.insert n2
       subject.root.value.should == 2
-      
+
       subject.insert n6
       subject.insert n4
       subject.insert n5
@@ -74,12 +74,11 @@ describe MaxHeap do
       subject.root.value.should == 6
     end
   end
-  
+
   describe "#remove" do
     it "can properly remove the biggest item" do
       subject.insert n1
       subject.insert n2
-      debugger
       subject.remove.value.should == 2
       subject.remove.value.should == 1
       subject.insert n3
@@ -101,13 +100,13 @@ describe MinHeap do
   let(:n4) { HeapNode.new(4) }
   let(:n5) { HeapNode.new(5) }
   let(:n6) { HeapNode.new(6) }
-  
+
   describe "#insert" do
     it "can insert multiple items correctly" do
       subject.insert n1
       subject.insert n2
       subject.root.value.should == 1
-    
+
       subject.insert n6
       subject.insert n4
       subject.insert n5

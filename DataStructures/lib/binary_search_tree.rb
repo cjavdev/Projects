@@ -55,11 +55,10 @@ class BinarySearchTree
   end
 
   def includes? node
-  
+
   end
-  
+
   def each &blk
     @root.each &blk
   end
 end
-

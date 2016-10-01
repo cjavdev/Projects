@@ -1,5 +1,3 @@
-require 'debugger'
-
 class Node
   attr_accessor :neighbors, :value
   include Comparable
@@ -29,7 +27,7 @@ class Node
     fringe = @neighbors.map { |k, v| v[0] }
     found = false
     until fringe.empty? || found
-      
+
     end
   end
 end

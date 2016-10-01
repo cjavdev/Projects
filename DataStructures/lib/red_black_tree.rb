@@ -1,6 +1,5 @@
 require 'colored'
 require 'singleton'
-require 'debugger'
 
 class TreeNode
   attr_accessor :left, :right, :parent, :value
@@ -47,7 +46,7 @@ class RBNode < TreeNode
 
   def to_s
     if @value
-      "*#{ @value }: #{ @color == :black ? 'black' : 'red  ' } p: #{ !!@parent ? @parent.value : nil } l: #{ !!@left ? @left.value : nil } r: #{ !!@right ? @right.value : nil }*\n" 
+      "*#{ @value }: #{ @color == :black ? 'black' : 'red  ' } p: #{ !!@parent ? @parent.value : nil } l: #{ !!@left ? @left.value : nil } r: #{ !!@right ? @right.value : nil }*\n"
     else
       ""
     end
@@ -73,7 +72,7 @@ class RBTree
       end
 
       finder.value, finder.color = node.value, :red
-      finder.left = RBNode.new(nil, finder, :black) 
+      finder.left = RBNode.new(nil, finder, :black)
       finder.right = RBNode.new(nil, finder, :black)
     end
     finder ||= node
@@ -230,15 +229,8 @@ class RBTree
   end
 end
 
-
-tree = RBTree.new
-tree << 1
-tree << 2
-tree << 3
-tree << 4
-
-p tree.levels
-
-
-
-
+# tree = RBTree.new
+# tree << 1
+# tree << 2
+# tree << 3
+# tree << 4

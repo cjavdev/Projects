@@ -27,11 +27,11 @@ describe MyHash do
     subject["retna"] = "test10"
     subject["chair"] = "test11"
     old_bucket_length = subject.buckets.length
-    
+
     10.times do |x|
       subject[ "test#{ x }" ] = "test#{ x }"
     end
-    p subject.buckets
+    # p subject.buckets
     subject.buckets.length.should == 2*old_bucket_length
   end
 
@@ -40,7 +40,7 @@ describe MyHash do
     subject["another test"] = "blah"
 
     subject.each do |key, value|
-      puts "#{ key }: #{ value }"
+      # puts "#{ key }: #{ value }"
     end
   end
 end

@@ -9,6 +9,16 @@
 This covers: OSI Model, `ifconfig`, `arp`, `ping`, `traceroute`, `nmap`, Wireshark
 
 ##Data Structures
+
+These are implemented in ruby, python, and javascript. To run the tests:
+```
+cd DataStructures
+bundle install
+rake
+rake jasmine
+rake py
+```
+
 * [Binary
   Tree](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/binary_tree.rb). [wiki](http://en.wikipedia.org/wiki/Binary_tree)
 * [Binary Search

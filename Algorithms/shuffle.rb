@@ -1,5 +1,3 @@
-require 'debugger'
-
 students = [:oddalot,
             :persamina,
             :djquan,
@@ -62,7 +60,3 @@ d = itr_pair students
 p d.values.flatten(1).uniq.count
 
 p "#{ d.count } days worth of pairs for #{ students.length } students."
-
-
-
-

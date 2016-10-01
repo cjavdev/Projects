@@ -1,5 +1,3 @@
-require 'debugger'
-
 class Link
   attr_accessor :prev, :next, :value
   include Comparable
