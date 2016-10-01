@@ -2,6 +2,10 @@ import random
 
 
 class Node:
+    """
+    Node is similar to a normal Node in a Singly Linked List, however this one
+    also has an added `down` property to help with SkipList.
+    """
 
     def __init__(self, data, next=None, down=None):
         self.data = data
@@ -10,6 +14,9 @@ class Node:
 
 
 class SortedLinkedList:
+    """
+    A linked list that maintains sorted order.
+    """
 
     def __init__(self, head=None):
         self.head = head
@@ -70,6 +77,10 @@ class SortedLinkedList:
 
 
 class SkipList:
+    """
+    Will find items in log N time most of the time with high probability
+    because... math.
+    """
 
     def __init__(self):
         base = SortedLinkedList()
@@ -90,23 +101,34 @@ class SkipList:
         return random.random() < .5
 
     def find(self, data):
-        # Iterate backwards over the lists
+        # Starting with the last list (a.k.a L1, the level with the fewest
+        # nodes)
         list = self.lists[-1]
-        current = list.head # -inf
-        next = current.next # 1
+
+        # Setup our runners
+        current = list.head
+        next = current.next
+
+        # While we're still in an "express" level (fewer than N nodes)
         while current.down:
+
             # At end of this level, go down.
             if next is None:
                 current = current.down
                 next = current.next
 
-            # The next node is our target.
+            # The next node has our target value.
             if next and next.data == data:
+                # Drop down to the bottom level and return the base node,
+                # This could probably just return "next", but just incase the
+                # bottom level node is special for some reason and hasn't copied
+                # all of the data, lets return that one.
                 while next.down:
                     next = next.down
                 return next
 
-            # Walk right
+            # Haven't found our target, nor reached the end of the level so
+            # Let's Walk right
             if next and next.data < data:
                 current = next
                 next = next.next
@@ -118,6 +140,10 @@ class SkipList:
                 next = current.next
 
     def insert(self, data):
+        """
+        Note: This is naiive and should use the same algorithm as find ^.
+        This is worse than just inserting into a single sorted list. :(
+        """
         node = Node(data)
         self.lists[0].insert_node(node)
         i = 0
