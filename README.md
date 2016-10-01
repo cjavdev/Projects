@@ -1,4 +1,4 @@
-#w1zeman1p's Project List 
+#w1zeman1p's Project List
 
 ## Low Level
 * [Assembly and Machine](./LowLevel/machine-code.md)
@@ -32,6 +32,8 @@ This covers: OSI Model, `ifconfig`, `arp`, `ping`, `traceroute`, `nmap`, Wiresha
 * [Linked
   List](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/linked_list.rb).
 [wiki](http://en.wikipedia.org/wiki/Linked_list)
+* [SkipList](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/skip_list.py).
+  [wiki](https://en.wikipedia.org/wiki/Skip_list)
 * [Graph](https://github.com/w1zeman1p/Projects/blob/master/DataStructures/lib/graph.rb). [wiki](http://en.wikipedia.org/wiki/Graph_\(data_structure\))
 
 ##Algorithms
@@ -53,7 +55,7 @@ This covers: OSI Model, `ifconfig`, `arp`, `ping`, `traceroute`, `nmap`, Wiresha
 
 **Find PI to the Nth Digit** – Enter a number and have the program generate PI up to that many decimal places. Keep a limit to how far the program will go.
 
-[**Fibonacci Sequence**](https://github.com/w1zeman1p/Projects/blob/master/Numbers/fibonacci.rb) – Enter a number and have the program generate the Fibonacci sequence to that number or to the Nth number. [wiki](http://en.wikipedia.org/wiki/Fibonacci_number) 
+[**Fibonacci Sequence**](https://github.com/w1zeman1p/Projects/blob/master/Numbers/fibonacci.rb) – Enter a number and have the program generate the Fibonacci sequence to that number or to the Nth number. [wiki](http://en.wikipedia.org/wiki/Fibonacci_number)
 
 [**Prime Factorization**](https://github.com/w1zeman1p/Projects/blob/master/Numbers/prime_factors.rb) – Have the user enter a number and find all Prime Factors (if there are any) and display them.
 
@@ -243,7 +245,7 @@ Calculator**](https://github.com/w1zeman1p/Projects/blob/master/Numbers/rpn.rb) 
 
 **Add Transactions In File and Find Averages** – Read in a file of financial transactions, group them into accounts, add up fields or find averages or apply credits and debits to each account.
 
-**Create Zip File Maker** – The user enters various files from different directories and maybe even another computer on the network and the program transfers them and zips them up into a zip file. For added complexity, apply actual compression 
+**Create Zip File Maker** – The user enters various files from different directories and maybe even another computer on the network and the program transfers them and zips them up into a zip file. For added complexity, apply actual compression
 
 **Bulk Renamer and Organizer** – This program will take a series of files and renames them with a specific filename filter entered by the user. For instance if the user enters myimage###.jpg it will rename all files with a “minimum” of three numbers like “myimage001.jpg”, “myimage145.jpg” or even “myimage1987.jpg” since 1987 has at least three numbers.
 
