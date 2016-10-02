@@ -1,20 +1,20 @@
-def quick_sort (array, left=0, right= array.length-1)
+def quick_sort(array, left=0, right=array.length-1)
   if left < right
     pivot_idx = (left + right) / 2
     puts left
     puts right
-    pivot_idx = partition( array, left, right, pivot_idx )
+    pivot_idx = partition(array, left, right, pivot_idx)
 
-    quick_sort(array, left, pivot_idx -1)
+    quick_sort(array, left, pivot_idx - 1)
     quick_sort(array, pivot_idx + 1, right)
   end
   array
 end
 
-def partition( array, left, right, pivot_idx )
+def partition(array, left, right, pivot_idx )
   front_ptr = left
   pivot_val = array[pivot_idx]
-  
+
   array[pivot_idx], array[right] = array[right], array[pivot_idx]
 
   (left...right).to_a.each do |idx|
@@ -22,7 +22,6 @@ def partition( array, left, right, pivot_idx )
       array[front_ptr], array[idx] = array[idx], array[front_ptr]
       front_ptr += 1
     end
-   
   end
   array[front_ptr], array[right] = array[right], array[front_ptr]
   front_ptr

@@ -17,7 +17,10 @@ rescue LoadError
 end
 
 task :py do
+  puts 'Merge Sort Test -'
   `python -m unittest spec.merge_sort_test`
+  puts 'Quick Sort Test -'
+  `python -m unittest spec.quick_sort_test`
 end
 
 task default: :spec
