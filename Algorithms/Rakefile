@@ -16,4 +16,8 @@ rescue LoadError
   end
 end
 
+task :py do
+  `python -m unittest spec.merge_sort_test`
+end
+
 task default: :spec

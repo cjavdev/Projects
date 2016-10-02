@@ -53,8 +53,7 @@ rake py
    Sort](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/heap_sort.rb). [wiki](http://en.wikipedia.org/wiki/Heap_sort)
  * [Insertion
    Sort](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/insertion_sort.rb). [wiki](http://en.wikipedia.org/wiki/Insertion_sort)
- * [Merge
-   Sort](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/merge_sort.rb). [wiki](http://en.wikipedia.org/wiki/Merge_sort)
+ * [Merge](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/merge_sort.rb)[Sort](./Algorithms/merge_sort.py). [wiki](http://en.wikipedia.org/wiki/Merge_sort)
  * [Quick
    Sort](https://github.com/w1zeman1p/Projects/blob/master/Algorithms/quick_sort.rb). [wiki](http://en.wikipedia.org/wiki/Quick_sort)
  * [Selection
